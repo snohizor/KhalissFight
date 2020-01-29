@@ -35,12 +35,12 @@ public class Main {
         log("KHALISS FIGHT");
         space();
 
+        System.out.println(loadedChars.get(0).name);
+
         displayList(players, mobs);
 
         extractTxt(allCharacters);
         //new Fight(players, mobs);
-
-        log(allCharacters.get(3).name);
     }
 
     private static void loadChars(ArrayList<Character> loadedChars, ArrayList<Character> allCharacters) {
@@ -101,9 +101,7 @@ public class Main {
 
         boolean b = true;
         for (int i = 0; i < nbOfChars; i++) {
-
-
-            System.out.print(array[(fields.length*i) + 0]);System.out.print(array[(fields.length*i) + 0]);System.out.print(array[(fields.length*i) + 0]);
+            log("ici : ");System.out.print(array[(fields.length*i) + 0]);
 
             if (array[(fields.length*i) + 0].equals("false")){
                 b = false;
@@ -130,7 +128,7 @@ public class Main {
             int level = Integer.parseInt(array[(fields.length*i) + 7]);
             int hpMax = Integer.parseInt(array[(fields.length*i) + 8]);
             int hp = Integer.parseInt(array[(fields.length*i) + 9]);
-            int strengh = Integer.parseInt(array[(fields.length*i) + 10]);
+            int strength = Integer.parseInt(array[(fields.length*i) + 10]);
             int dexterity = Integer.parseInt(array[(fields.length*i) + 11]);
             int constitution = Integer.parseInt(array[(fields.length*i) + 12]);
             int intelligence = Integer.parseInt(array[(fields.length*i) + 13]);
@@ -138,7 +136,7 @@ public class Main {
             int charisma = Integer.parseInt(array[(fields.length*i) + 15]);
             //nice
 
-            list.add(new Character(isHuman, name, _class, race, alignment, init, xp, level, hpMax, hp, strengh, dexterity, constitution, intelligence, wisdom, charisma));
+            list.add(new Character(isHuman, name, _class, race, alignment, init, xp, level, hpMax, hp, strength, dexterity, constitution, intelligence, wisdom, charisma));
             log((name + " loaded."));
         }
     }

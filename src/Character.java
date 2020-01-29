@@ -5,24 +5,40 @@ import java.util.Scanner;
 
 public class Character {
 
-    public boolean isHuman;
-    public String name;
-    public String _class;
-    public String race;
-    public String alignment;
-    public int init;
-    public int xp;
-    public int level;
-    public int hpMax;
-    public int hp;
-    public int strengh;
-    public int dexterity;
-    public int constitution;
-    public int intelligence;
-    public int wisdom;
-    public int charisma;
+    boolean isHuman;
+    String name;
+    String _class;
+    String race;
+    String alignment;
+    int init;
+    int xp;
+    int level;
+    int hpMax;
+    int hp;
+    int strengh;
+    int dexterity;
+    int constitution;
+    int intelligence;
+    int wisdom;
+    int charisma;
 
     public Character(boolean isHuman, String name, String _class, String race, String alignment, int init, int xp, int level, int hpMax, int hp, int strengh, int dexterity, int constitution, int intelligence, int wisdom, int charisma) {
+        this.isHuman = isHuman;
+        this.name = name;
+        this._class = _class;
+        this.race = race;
+        this.alignment = alignment;
+        this.init = init;
+        this.xp = xp;
+        this.level = level;
+        this.hpMax = hpMax;
+        this.hp = hp;
+        this.strengh = strengh;
+        this.dexterity = dexterity;
+        this.constitution = constitution;
+        this.intelligence = intelligence;
+        this.wisdom = wisdom;
+        this.charisma = charisma;
     }
 
     public String displayCharacter() {
@@ -75,7 +91,6 @@ public class Character {
         String statsOfCharInString = "";
         String str = "";
         Field[] fields = Character.class.getDeclaredFields();
-        System.out.println("fields length : " + fields.length);
         for (int i = 0; i < fields.length; i++) {
             try {
                 str = fields[i].get(this).toString() + " ";
