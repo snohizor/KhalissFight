@@ -1,7 +1,8 @@
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Fight {
+    public static String orderListString = "";
+
     public Fight(ArrayList<Character> players, ArrayList<Character> mobs) {
 
         int sumHpMobs = getSumHp(mobs);
@@ -38,21 +39,22 @@ public class Fight {
 
             }
 
-            //System.out.println("le bestInitChar : " + bestInitChar.name);
             listsLength--;
             orderList.add(bestInitChar);
             allCharactersList.remove(bestInitChar);
 
         }
 
+        //Génération de la liste d'init
         System.out.println("Ordre d'initiative :");
         for(Character character : orderList){
             System.out.println(character.name + " : " + character.init);
+            orderListString = orderListString + "\n" + character.name;
         }
 
         System.out.println("--------------");
         System.out.println("LET THE FIGHT BEGIN");
-        Main.getAllCharsInList(allCharactersList, players, mobs);
+        Main.fillOneListFromTwoLists(allCharactersList, players, mobs);
         System.out.println(getSumHp(mobs));
 
         while(getSumHp(mobs)>0){
